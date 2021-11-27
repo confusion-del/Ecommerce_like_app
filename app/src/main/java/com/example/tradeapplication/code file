@@ -1,0 +1,18 @@
+buttonTembea1 = findViewById(R.id.btn1)
+        buttonTembea2 = findViewById(R.id.btn2)
+
+
+        buttonTembea1!!.setOnClickListener {
+            var tembea1 = Intent(this,BuyPageActivity::class.java)
+            startActivity(tembea1)
+        }
+        buttonTembea2!!.setOnClickListener {
+            var tembea2 = Intent(this,SellPageActivity::class.java)
+            startActivity(tembea2)
+        }
+
+
+
+
+        var buttonTembea1: Button? = null
+            var buttonTembea2: Button? = null
