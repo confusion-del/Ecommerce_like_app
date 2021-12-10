@@ -15,4 +15,61 @@ buttonTembea1 = findViewById(R.id.btn1)
 
 
         var buttonTembea1: Button? = null
-            var buttonTembea2: Button? = null
+            var buttonTembea2: Button? = null\
+
+
+            else if (item_id==R.id.exit){
+                        Toast.makeText(this,"This is exit item",
+                            Toast.LENGTH_LONG).show()
+                    }
+
+                     var item1 = Item(R.drawable.beach,"Car",
+                                "Ksh 2500000","This is a nice car")
+                            var item2 = Item(R.drawable.vehicle,"Car",
+                                "Ksh 5600000","This is a nice car")
+                            var item3 = Item(R.drawable.beach,"Car",
+                                "Ksh 5000000","This is a nice car")
+                            var item4 = Item(R.drawable.vehicle,"Car",
+                                "Ksh 6706000","This is a nice car")
+                            var item5 = Item(R.drawable.beach,"Car",
+                                "Ksh 5486000","This is a nice car")
+                            items!!.add(item1)
+                            items!!.add(item2)
+                            items!!.add(item3)
+                            items!!.add(item4)
+                            items!!.add(item5)
+                            itemsList!!.adapter = adapter
+
+
+                            //Check if the user is trying to submit empty fields
+                                        if (name.isEmpty()){
+                                            editTextName!!.setError("Please fill this input")
+                                            editTextName!!.requestFocus()
+                                        }else if (description.isEmpty()){
+                                            editTextDescription!!.setError("Please fill this input")
+                                            editTextDescription!!.requestFocus()
+                                        }else if (price.isEmpty()){
+                                            editTextPrice!!.setError("Please fill this input")
+                                            editTextPrice!!.requestFocus()
+                                        }else{
+                                            //proceed to save the data
+                                            var time = System.currentTimeMillis().toString()
+                                            var ref = FirebaseDatabase.getInstance().
+                                            getReference().child("Users/$time")
+                                            var dataBeingSaved = User(name,description,price,time)
+                                            ref.setValue(dataBeingSaved).addOnCompleteListener { task->
+                                                if (task.isSuccessful){
+                                                    Toast.makeText(this,"Items saved successfully",
+                                                        Toast.LENGTH_LONG).show()
+                                                }else{
+                                                    Toast.makeText(this,"Item saving failed",
+                                                        Toast.LENGTH_LONG).show()
+                                                }
+                                            }
+                                        }
+                                        if (requestCode==111 && resultCode == RESULT_OK && data != null) {
+                                                    filepath =  data.data!!
+                                                    val selectedImage: Uri = data.data ?: return
+                                                    val bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(selectedImage))
+                                                    image!!.setImageBitmap(bitmap)
+                                                    var pictureFlag = 1

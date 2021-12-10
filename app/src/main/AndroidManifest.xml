@@ -12,12 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TradeApplication">
         <activity
+            android:name=".SellPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyPageActivity"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".FinalOrderActivity"
             android:exported="false" />
@@ -29,12 +34,6 @@
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SellPageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BuyPageActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

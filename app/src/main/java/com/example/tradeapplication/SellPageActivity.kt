@@ -3,14 +3,12 @@ package com.example.tradeapplication
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -30,9 +28,6 @@ class SellPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sell_page)
 
         buttonSave = findViewById(R.id.button2)
-        editTextDescription= findViewById(R.id.mTvDesc)
-        editTextName = findViewById(R.id.mTvName)
-        editTextPrice = findViewById(R.id.mTvPrice)
         buttonChoose = findViewById(R.id.button)
         buttonView = findViewById(R.id.button3)
         image = findViewById(R.id.imageView)
@@ -42,41 +37,37 @@ class SellPageActivity : AppCompatActivity() {
         }
 
         buttonSave!!.setOnClickListener {
-
-
+            //start receiving what the user has written on the input fields
+            var name = editTextName!!.text.toString().trim()
+            var description = editTextDescription!!.text.toString().trim()
+            var price = editTextPrice!!.text.toString().trim()
+            //Check if the user is trying to submit empty fields
+            if (name.isEmpty()){
+                editTextName!!.error = "Please fill this input"
+                editTextName!!.requestFocus()
+            }else if (description.isEmpty()){
+                editTextDescription!!.error = "Please fill this input"
+                editTextDescription!!.requestFocus()
+            }else if (price.isEmpty()){
+                editTextPrice!!.error = "Please fill this input"
+                editTextPrice!!.requestFocus()
+            }else{
+                //proceed to save the data
+                var time = System.currentTimeMillis().toString()
+                var ref = FirebaseDatabase.getInstance().reference.child("Users/$time")
+                var dataBeingSaved = User(name,description,price,time)
+                ref.setValue(dataBeingSaved).addOnCompleteListener { task->
+                    if (task.isSuccessful){
+                        Toast.makeText(this,"Item saved successfully",
+                            Toast.LENGTH_LONG).show()
+                    }else{
+                        Toast.makeText(this,"Item saving failed",
+                            Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
         }
-
-
         buttonView!!.setOnClickListener { startActivity(Intent(this,UsersActivity::class.java)) }
-    }
-
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_item,menu)
-
-        return true
-    }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var item_id=item.itemId
-
-        if (item_id==R.id.profile){
-            Toast.makeText(this,"This is user profile item",
-                Toast.LENGTH_LONG).show()
-        }else if (item_id==R.id.setting){
-            Toast.makeText(this,"This is settings item",
-                Toast.LENGTH_LONG).show()
-        }else if (item_id==R.id.help){
-            Toast.makeText(this,"This is help item",
-                Toast.LENGTH_LONG).show()
-        }else if (item_id==R.id.share){
-            Toast.makeText(this,"This is share item",
-                Toast.LENGTH_LONG).show()
-        }else if (item_id==R.id.exit){
-            Toast.makeText(this,"This is share item",
-                Toast.LENGTH_LONG).show()
-        }
-
-        return true
     }
     private fun startFileChooser() {
         var i = Intent()

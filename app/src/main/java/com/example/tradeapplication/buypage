@@ -1,0 +1,120 @@
+package com.example.tradeapplication
+
+import android.content.Intent
+import android.icu.lang.UProperty.NAME
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.provider.Settings.Global.getString
+import android.provider.Settings.Secure.getString
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.*
+
+class BuyPageActivity : AppCompatActivity() {
+
+    var itemsList: ListView? =null
+    var items:ArrayList<Item>? =null
+    var adapter:CustomAdapter? =null
+    var btton:Button? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_buy_page)
+
+        itemsList = findViewById(R.id.mListItems)
+        btton = findViewById(R.id.mBtn2)
+        items = ArrayList()
+        adapter = CustomAdapter(this,items!!)
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_item,menu)
+
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var item_id=item.itemId
+
+        if (item_id==R.id.profile){
+            Toast.makeText(this,"This is user profile item",
+                Toast.LENGTH_LONG).show()
+        }else if (item_id==R.id.setting){
+            Toast.makeText(this,"This is settings item",
+                Toast.LENGTH_LONG).show()
+        }else if (item_id==R.id.help){
+            Toast.makeText(this,"This is help item",
+                Toast.LENGTH_LONG).show()
+        }else if (item_id==R.id.share){
+            Toast.makeText(this,"This is share item",
+                Toast.LENGTH_LONG).show()
+        }else if (item_id==R.id.exit){
+            Toast.makeText(this,"This is share item",
+                Toast.LENGTH_LONG).show()
+        }
+
+        return true
+    }
+
+}
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundcolor"
+    tools:context=".BuyPageActivity">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ListView
+            android:id="@+id/mListItems"
+            android:layout_width="match_parent"
+            android:layout_height="672dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/mBtnCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="32dp"
+                android:src="@drawable/ic_baseline_add_shopping_cart_24"
+                app:backgroundTint="@color/teal_700"
+                tools:ignore="SpeakableTextPresentCheck">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        </ListView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+itemsList = findViewById(R.id.mListItems)
+        btton = findViewById(R.id.mBtn2)
+        items = ArrayList()
+        adapter = CustomAdapter(this,items!!)
+
+
+        var itemsList: ListView? =null
+            var items:ArrayList<Item>? =null
+            var adapter:CustomAdapter? =null
+            var btton:Button? = null

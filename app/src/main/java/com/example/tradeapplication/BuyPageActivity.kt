@@ -1,39 +1,41 @@
 package com.example.tradeapplication
 
 import android.content.Intent
-import android.icu.lang.UProperty.NAME
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.*
+import android.widget.ListView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class BuyPageActivity : AppCompatActivity() {
 
     var itemsList: ListView? =null
     var items:ArrayList<Item>? =null
     var adapter:CustomAdapter? =null
-    var btton:Button? = null
+    var buttoncart:FloatingActionButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buy_page)
 
+
         itemsList = findViewById(R.id.mListItems)
-        btton = findViewById(R.id.mBtn2)
         items = ArrayList()
         adapter = CustomAdapter(this,items!!)
+        buttoncart = findViewById(R.id.Flt)
 
         var item1 = Item(R.drawable.beach,"Car",
-            "Ksh 2500000","This is a nice car")
+            "Ksh 2,500,000","Silk white, twin turbo engine")
         var item2 = Item(R.drawable.vehicle,"Car",
-            "Ksh 5600000","This is a nice car")
+            "Ksh 5,600,000","Lambo Urus")
         var item3 = Item(R.drawable.beach,"Car",
-            "Ksh 5000000","This is a nice car")
+            "Ksh 5,000,000","LAmbo Vendetta")
         var item4 = Item(R.drawable.vehicle,"Car",
-            "Ksh 6706000","This is a nice car")
+            "Ksh 6,706,000","Top speed 240mph")
         var item5 = Item(R.drawable.beach,"Car",
-            "Ksh 5486000","This is a nice car")
+            "Ksh 5,486,000","360p hp")
         items!!.add(item1)
         items!!.add(item2)
         items!!.add(item3)
@@ -41,11 +43,14 @@ class BuyPageActivity : AppCompatActivity() {
         items!!.add(item5)
         itemsList!!.adapter = adapter
 
-
-
+        buttoncart!!.setOnClickListener{
+            startActivity(Intent(this,AddToCart::class.java))
+        }
 
 
     }
+
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_item,menu)
 
@@ -73,4 +78,6 @@ class BuyPageActivity : AppCompatActivity() {
 
         return true
     }
+
 }
+

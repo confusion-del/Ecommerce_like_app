@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="@color/backgroundcolor"
     android:layout_height="match_parent"
     tools:context=".SellPageActivity">
 
@@ -38,11 +37,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="166dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="166dp"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="VectorDrawableCompat" />
+        android:layout_width="match_parent"
+        android:layout_height="251dp"
+        app:srcCompat="@drawable/pexels2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,11 +48,11 @@
 
         <Button
             android:id="@+id/button"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="choose"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:text=" choose image" />
 
         <Button
             android:id="@+id/button2"

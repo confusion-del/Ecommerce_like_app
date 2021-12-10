@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/recycleview"
     android:layout_width="match_parent"
-    android:padding="16dp"
+    android:layout_height="match_parent"
     android:layout_margin="16dp"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/mTvName"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        android:textAllCaps="true"
         android:layout_gravity="center_horizontal"
         android:text="Product name"
-        />
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="25sp" />
 
     <ImageView
         android:id="@+id/mImgPic"
@@ -32,25 +31,32 @@
         android:id="@+id/mTvDesc"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:textSize="20dp"
         android:layout_marginTop="1dp"
-        android:text="Description" />
+        android:text="Description"
+        android:textSize="20dp" />
 
 
     <TextView
         android:id="@+id/mTvPrice"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:textSize="20dp"
         android:layout_marginTop="1dp"
-        android:text="Price" />
+        android:text="Price"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/mBtn2"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:padding="5dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="1dp"
+        android:padding="5dp"
         android:text="Buy" />
+
+    <Button
+        android:id="@+id/Cartbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to Cart" />
 
 </LinearLayout>

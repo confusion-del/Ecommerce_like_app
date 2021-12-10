@@ -1,21 +1,18 @@
 package com.example.tradeapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
 
     var cardBuy:CardView?= null
     var cardSell:CardView?= null
-    var buttonTembea3: Button? = null
     var mAuth:FirebaseAuth? = null
 
 
@@ -25,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         cardBuy = findViewById(R.id.btn1)
         cardSell = findViewById(R.id.btn2)
-        buttonTembea3 = findViewById(R.id.btnLogout)
         mAuth = FirebaseAuth.getInstance()
 
 
@@ -36,10 +32,6 @@ class MainActivity : AppCompatActivity() {
         cardSell!!.setOnClickListener {
             var tembea2 = Intent(this,SellPageActivity::class.java)
             startActivity(tembea2)
-        }
-        buttonTembea3!!.setOnClickListener {
-            mAuth!!.signOut()
-            startActivity(Intent(this,LoginActivity::class.java))
         }
 
     }
@@ -67,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"This is share item",
                 Toast.LENGTH_LONG).show()
         }else if (item_id==R.id.exit){
-            Toast.makeText(this,"This is share item",
+            Toast.makeText(this,"This is exit item",
                 Toast.LENGTH_LONG).show()
         }
 

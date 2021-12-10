@@ -7,6 +7,7 @@
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" value="0.2203125" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2203125" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/drawable/ic_vert.xml" value="0.2203125" />
+        <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_add_to_cart.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_buy_page.xml" value="0.22" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_final_order.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_login.xml" value="0.2" />
@@ -15,8 +16,11 @@
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_sell_page.xml" value="0.2" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/activity_users.xml" value="0.2" />
+        <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/fragment_buy_page_activity.xml" value="0.2" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/item_layout.xml" value="0.2" />
+        <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/menu/menu_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/DUKE/AndroidStudioProjects/TradeApplication/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
