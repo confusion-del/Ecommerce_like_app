@@ -26,8 +26,9 @@ class BuyPageActivity : AppCompatActivity() {
         adapter = CustomAdapter(this,items!!)
         buttoncart = findViewById(R.id.Flt)
 
-        var item1 = Item(R.drawable.beach,"Car",
-            "Ksh 2,500,000","Silk white, twin turbo engine")
+        var item1 = Item(R.drawable.beach,"Cloth",
+            "Ksh 2,000","Silk white" +
+                    ",Louis Vuitton")
         var item2 = Item(R.drawable.ipho,"Electronic",
             "Ksh 165,000","iPhone 13 pro" +
                     "6.1 inches")
