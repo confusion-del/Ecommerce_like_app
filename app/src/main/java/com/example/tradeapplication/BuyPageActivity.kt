@@ -28,10 +28,12 @@ class BuyPageActivity : AppCompatActivity() {
 
         var item1 = Item(R.drawable.beach,"Car",
             "Ksh 2,500,000","Silk white, twin turbo engine")
-        var item2 = Item(R.drawable.vehicle,"Car",
-            "Ksh 5,600,000","Lambo Urus")
-        var item3 = Item(R.drawable.beach,"Car",
-            "Ksh 5,000,000","LAmbo Vendetta")
+        var item2 = Item(R.drawable.ipho,"Electronic",
+            "Ksh 165,000","iPhone 13 pro" +
+                    "6.1 inches")
+        var item3 = Item(R.drawable.iph,"Electronic",
+            "Ksh 110,000","iPhone 12" +
+                    "all‑screen OLED display")
         var item4 = Item(R.drawable.vehicle,"Car",
             "Ksh 6,706,000","Top speed 240mph")
         var item5 = Item(R.drawable.beach,"Car",
